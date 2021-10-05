@@ -36,6 +36,7 @@ app.use(express.static(path.join(__dirname,'public')));
 // });
 
 
+
 //Index Route
 app.get('/visitors',async(req,res)=>{
    const visitors=await Visitor.find({});
