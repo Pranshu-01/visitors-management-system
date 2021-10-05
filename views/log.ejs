@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/new.css">
+    <title>Document</title>
+</head>
+<body>
+    
+       
+       <h1>Log out</h1>
+
+       <form action="/visitors/<%= visitor._id %>?_method=PUT " method="POST">
+                <div id="main">
+        <div id="d1">
+            <label for="name">Name:</label>
+            <br>
+            <input type="text" name="name" id="name" placeholder="Full Name" size="30" value="<%= visitor.name%>" readonly >
+        </div>
+        <br><br>
+        <div id="d2">
+            <label for="phone">Phone:</label>
+            <br>
+            <input type="number" name="phone" id="phone" placeholder="PhoneNumber"  value="<%= visitor.phone%>" readonly>
+        </div>
+        <br>
+        <br>
+
+        <div id="d3">
+            <label for="email">Email:</label>
+            <br>
+            <input type="email" name="email" id="email" placeholder="mail@gmail.com" size="30"  value="<%= visitor.email %>" readonly>
+        </div>
+        <br>
+        <div id="d4">
+         <button type="submit" id="b2" onclick="fun2()">Log out</button>
+        </div>
+        </div>
+    </form>
+
+    <script>
+function fun2(){
+    alert('Log Out details has been sent on Email...');
+}
+</script>
+    
+
+
+
+</body>
+</html>

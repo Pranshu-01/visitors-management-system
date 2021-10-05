@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/app.css">
+    <title>Document</title>
+</head>
+<body>
+
+
+<script>
+  setTimeout(function() { 
+    if(!localStorage["alertdisplayed"]) {
+    alert("Welcome Visitor. Click on Make Entry.")
+    localStorage["alertdisplayed"] = true
+}
+   }, 300);
+</script>
+
+
+    <h1>Visitor's Management System</h1>
+    <div id="b1">
+    <button id="b11"><a id="b111" href="/visitors/new">Make Entry</a></button>
+</div>
+   
+    <ul>
+      <%  for(let visitor of visitors){ %>
+        <li>
+          <div id="b5">
+            <button id="b55">
+              <a id="b555" href="/visitors/<%= visitor._id %>/log">Log out</a>
+            </button>
+          </div>
+            <h2><%=visitor.name%> </h2>
+
+           
+
+            <p><%= visitor.phone %> </p>
+            <p><%= visitor.email %> </p>
+            <p><%= visitor.date %> </p>
+            <h4>Status : &#128994 Active</h4>
+            
+            
+            
+          <div id="b2">
+            <button id="b22"><a id="b222" href="/visitors/<%= visitor._id %> ">Show</a></button>
+  
+
+            <button id="b33">
+            <a id="b333" href="/visitors/<%= visitor._id %>/edit">Edit</a>
+          </button>
+
+       
+            <form action="/visitors/<%= visitor._id %>?_method=DELETE " method="POST" id="f1">
+                <button type="submit" id="b444">Delete</button>
+            </form>
+          </div>
+
+         
+         
+
+           
+        </li>
+
+      <% } %>
+    </ul>
+
+ 
+    
+</body>
+</html>

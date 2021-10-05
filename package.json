@@ -1,0 +1,22 @@
+{
+  "name": "assignment-8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./index.jsA"
+  },
+  "author": "Pranshu Goyal",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^7.4.7",
+    "body": "^5.1.0",
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.0.8",
+    "nodemon": "^2.0.13",
+    "parser": "^0.1.4"
+  }
+}

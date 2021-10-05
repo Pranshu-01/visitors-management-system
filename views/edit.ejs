@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/new.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    
+    <title>Document</title>
+</head>
+<body>
+    
+       
+    <h1>Edit  <i class="bi bi-pencil-square"></i></h1>
+
+       <form action="/visitors/<%= visitor._id %>?_method=PATCH " method="POST">
+                <div id="main">
+        <div id="d1">
+            <label for="name">Name:</label>
+            <br>
+            <input type="text" name="name" id="name" placeholder="Full Name" size="30" value="<%= visitor.name%>">
+        </div>
+        <br><br>
+        <div id="d2">
+            <label for="phone">Phone:</label>
+            <br>
+            <input type="number" name="phone" id="phone" placeholder="PhoneNumber"  value="<%= visitor.phone%>">
+        </div>
+        <br>
+        <br>
+
+        <div id="d3">
+            <label for="email">Email:</label>
+            <br>
+            <input type="email" name="email" id="email" placeholder="mail@gmail.com" size="30"  value="<%= visitor.email %>">
+        </div>
+        <br>
+        <div id="d4">
+         <button type="submit" id="b1" >Save</button>
+        </div>
+        </div>
+    </form>
+
+    <script>
+
+</script>
+    
+
+
+
+</body>
+</html>
