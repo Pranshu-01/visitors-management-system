@@ -166,7 +166,7 @@ sgMail
 });
 
 
-app.listen(2323,()=>{
+app.listen(process.env.PORT||2323,()=>{
     console.log('server started at port 2323');
 });
 
