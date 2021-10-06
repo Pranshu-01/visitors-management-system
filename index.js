@@ -29,11 +29,11 @@ app.use(express.static(path.join(__dirname,'public')));
 
 
 
-//ROUTE
-// app.get('/',(req,res)=>{
-//     // res.send("CONNECTED");
-//     res.render('index');
-// });
+ROUTE
+app.get('/',(req,res)=>{
+    res.send("CONNECTED");
+    // res.render('index');
+});
 
 
 
