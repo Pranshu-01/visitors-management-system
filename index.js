@@ -10,7 +10,7 @@ const { send } = require('process');
 const { EmailAddress } = require('@sendgrid/helpers/classes');
 
 
-mongoose.connect('mongodb://localhost:27017/visitors-db')
+mongoose.connect('mongodb+srv://pranshugoyal:pranshu1234@cluster0.xjb2n.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
 .then(()=>console.log('Db Connected'))
 .catch((err)=>console.log(err));
 
@@ -31,10 +31,9 @@ app.use(express.static(path.join(__dirname,'public')));
 
 // ROUTE
 app.get('/',async(req,res)=>{
-    // res.send("CONNECTED");
-    const visitors=await Visitor.find({});
-    res.render('index',{visitors});
-    // res.render('index');
+  const visitors=await Visitor.find({});
+ 
+  res.render('index',{visitors});
 });
 
 
