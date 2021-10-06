@@ -32,7 +32,8 @@ app.use(express.static(path.join(__dirname,'public')));
 // ROUTE
 app.get('/',(req,res)=>{
     // res.send("CONNECTED");
-    res.render('index');
+    const visitors={};
+    res.render('index',{visitors});
 });
 
 
