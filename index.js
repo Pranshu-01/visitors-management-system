@@ -30,10 +30,11 @@ app.use(express.static(path.join(__dirname,'public')));
 
 
 // ROUTE
-app.get('/',(req,res)=>{
+app.get('/',async(req,res)=>{
     // res.send("CONNECTED");
-    const visitors={};
+    const visitors=await Visitor.find({});
     res.render('index',{visitors});
+    // res.render('index');
 });
 
 
