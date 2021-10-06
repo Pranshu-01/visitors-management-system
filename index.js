@@ -5,11 +5,12 @@ const path=require('path');
 const Visitor=require('./models/visitor');
 const seedDB=require('./seed');
 const methodOverride=require('method-override');
-const mail = require('@sendgrid/mail');
+const sgmail = require('@sendgrid/mail');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const { send } = require('process');
 const { EmailAddress } = require('@sendgrid/helpers/classes');
 
-mail.setApiKey(process.env.seedDBendgrid_API_KEY);
+
 
 mongoose.connect('mongodb://localhost:27017/visitors-db')
 .then(()=>console.log('Db Connected'))
