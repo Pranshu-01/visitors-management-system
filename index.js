@@ -9,6 +9,7 @@ const mail = require('@sendgrid/mail');
 const { send } = require('process');
 const { EmailAddress } = require('@sendgrid/helpers/classes');
 
+mail.setApiKey(process.env.seedDBendgrid_API_KEY);
 
 mongoose.connect('mongodb://localhost:27017/visitors-db')
 .then(()=>console.log('Db Connected'))
