@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname,'public')));
 
 
 
-ROUTE
+// ROUTE
 app.get('/',(req,res)=>{
     res.send("CONNECTED");
     // res.render('index');
@@ -171,11 +171,6 @@ sgMail
 app.listen(process.env.PORT||2323,()=>{
     console.log('server started at port 2323');
 });
-// app.set('port',(process.env.PORT||2323));
-
-// app.listen(app.get('port'),function(){
-//   console.log('Node server is running at port'+app.get('port'));
-// });
 
 
     
