@@ -62,7 +62,7 @@ app.post('/visitors',async(req,res)=>{
     
     //send Entry Email
 const sgMail = require('@sendgrid/mail')
-const API_KEY=' Yours sendgrid api key';
+const API_KEY=process.env.API_KEY;
 sgMail.setApiKey(API_KEY);
 
 const msg = {
