@@ -10,7 +10,11 @@ const { send } = require('process');
 const { EmailAddress } = require('@sendgrid/helpers/classes');
 
 
-mongoose.connect('mongodb+srv://pranshugoyal:pranshu1234@cluster0.xjb2n.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+if(process.env.NODE_ENV!=='production'){
+  require('dotenv').config();
+}
+
+mongoose.connect(process.env.MONGO_URL)
 .then(()=>console.log('Db Connected'))
 .catch((err)=>console.log(err));
 
@@ -58,7 +62,7 @@ app.post('/visitors',async(req,res)=>{
     
     //send Entry Email
 const sgMail = require('@sendgrid/mail')
-const API_KEY='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';
+const API_KEY=' Yours sendgrid api key';
 sgMail.setApiKey(API_KEY);
 
 const msg = {
@@ -134,7 +138,7 @@ app.put('/visitors/:id',async(req,res)=>{
     const{name,phone,email,date}=req.body;
 
     const sgMail = require('@sendgrid/mail')
-const API_KEY='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';
+const API_KEY='Yours sendgrid api key';
 sgMail.setApiKey(API_KEY);
 
 const msg = {
